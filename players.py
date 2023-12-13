@@ -52,7 +52,6 @@ def deal(name,bank, Sblind):
 def blinds(players,Sblind):
     players[0].bank -= Sblind
     players[1].bank -= Sblind*2
-    for i in players:
-        print(i.cards)
+
     
 deal("Binamra",1000,2)
