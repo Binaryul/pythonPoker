@@ -39,19 +39,20 @@ def deal(name,bank, Sblind):
         CPU.append(Players(bank,f"CPU_{i+1}"))
     
     player = Players(bank, name)
-    
+    #adds the player and CPUs to a list containg all so order of betting can be done
     players.extend(CPU)
     players.append(player)
     
     for name in players:
         drawn = draw(2)
         name.draw(drawn)
-    
+
     blinds(players,Sblind)
     
 def blinds(players,Sblind):
+    #take away the blinds from those assigned to them
     players[0].bank -= Sblind
     players[1].bank -= Sblind*2
 
-    
+#test
 deal("Binamra",1000,2)
