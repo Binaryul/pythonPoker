@@ -39,7 +39,7 @@ def full_house(hand,value_list,suit_list):
 
 def flush(hand,value_list,suit_list):
     for card in suit_list:
-        if suit_list.count(card) == 5:
+        if suit_list.count(card) >= 5:
             return True
 
 def straight(hand,value_list,suit_list):
@@ -100,7 +100,7 @@ def check_hand(hand):
         value_list.append(card.value)
         suit_list.append(card.suit)
     #list of all hand check functions
-    hand_checks = [straight_flush, four_kind, full_house, straight, three_kind, two_pair, pair, high_card]
+    hand_checks = [straight_flush, four_kind, full_house, flush, straight, three_kind, two_pair, pair, high_card]
     
     for poker_check in hand_checks:
         result = poker_check(hand,value_list,suit_list)

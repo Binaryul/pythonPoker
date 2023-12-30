@@ -9,6 +9,13 @@ faceC = {
     14:"A",
 }
 
+suit_emoji = {
+    "Spades": ("♠") ,
+    "Hearts": ("♥") ,
+    "Diamonds": ("♦") ,
+    "Clubs": ("♣")
+}
+
 #class that holds the value and the suit of a deck to be called upon later
 #note all number cards are in an integer form so no need to use a dictionary to convert to a value
 #__str__ function allows the cards to be printed and have readable output
@@ -24,7 +31,7 @@ class Card:
             value = faceC[self.value]
         else:
             value = self.value
-        return f"{value} of {self.suit}"
+        return f"{value} of {suit_emoji[self.suit]}"
         #this allows for nice formating when printing the cards but allows cards to be compared easily later
     
     
@@ -41,3 +48,4 @@ def create_deck():
     p = deck(values, suits)
     return p
 
+print(create_deck())
