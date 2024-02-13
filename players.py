@@ -5,7 +5,7 @@ deck = create_deck()
 
 shuffled = random.sample(deck, len(deck))
 
-class Players:
+class Players:    
     def __init__(self, bank, name):
         self.bank = bank
         self.cards = []
@@ -24,14 +24,15 @@ class Players:
 play_count = 5
 
 #draws cards from the deck, made to be used in different projects
-def draw(num_cards):
+def draw(num_cards):       
     drawn_cards = []
     for i in range(num_cards):
         drawn_cards.append(shuffled[0])
         shuffled.pop(0)
     return drawn_cards
 
-def deal(name,bank, Sblind):
+
+def create_players(name,bank):
     CPU = []
     players = []
     #creates all the computers based on the player count and gives them names 
@@ -43,6 +44,10 @@ def deal(name,bank, Sblind):
     players.extend(CPU)
     players.append(player)
     
+    return players
+
+
+def deal(players, Sblind):
     for name in players:
         drawn = draw(2)
         name.draw(drawn)
@@ -54,5 +59,3 @@ def blinds(players,Sblind):
     players[0].bank -= Sblind
     players[1].bank -= Sblind*2
 
-#test
-deal("Binamra",1000,2)

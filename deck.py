@@ -47,5 +47,3 @@ def deck(values, suits):
 def create_deck():
     p = deck(values, suits)
     return p
-
-print(create_deck())
